@@ -115,7 +115,7 @@ end
 function simulated_annealing(cost::Function,
                              s0::Any,
                              neighbor::Function)
-  simulated_annealing(cost, s0, neighbor, log_temperature, true, 10e-8, 100_000, false)
+  simulated_annealing(cost, s0, neighbor, log_temperature, true, 10e-8, 500_000, false)
 end
 
 function simulated_annealing(cost::Function,
@@ -123,5 +123,5 @@ function simulated_annealing(cost::Function,
   function neighbor(x)
     map(x_i -> rand_cauchy(x_i, 1), x)
   end
-  simulated_annealing(cost, s0, neighbor, log_temperature, true, 10e-8, 100_000, false)
+  simulated_annealing(cost, s0, neighbor, log_temperature, true, 10e-8, 500_000, false)
 end
