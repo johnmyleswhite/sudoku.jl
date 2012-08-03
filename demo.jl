@@ -1,25 +1,25 @@
 load("solver.jl")
-
 load("sample_games.jl")
+load("viz.jl")
 
 println("Starting Grid")
-println(grid)
+grid_print(grid)
 println()
 
-println("Solution")
-println(solution)
+println("Correct Solution")
+grid_print(solution)
 println()
 
 tentative_solution = solver(grid)
 
 if cost(tentative_solution[3]) == 0
   println("Solution Found by SA")
-  println(tentative_solution[3])
+  grid_print(tentative_solution[3])
   println()
   @assert all(tentative_solution[3] .== solution)
 else
   println("Approximate Solution Found by SA")
-  println(tentative_solution[3])
+  grid_print(tentative_solution[3])
   println()
   println("No exact solution found.")
   println("You should probably the solver run for more than 500,000 iterations.")
