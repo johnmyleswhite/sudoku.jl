@@ -5,3 +5,5 @@
 * See demo.jl for usage example. This demo may need to be run a few times before you get lucky and hit the exact solution.
 
 _Disclaimer_: I've solved exactly one Sudoku in my life before. I'm not sure I understand the rules. What I understand, I've taken from the [Wikipedia article on Sudoku](http://en.wikipedia.org/wiki/Sudoku). Also, I'm definitely not trying to solve Sudoku problems in a smart way. I just wanted to show how easy it is to solve seemingly "complex" problems using something as stupid as simulated annealing.
+
+In contrast to the simplistic solution I've written up, there is a very efficient Sudoku solver at [https://github.com/IainNZ/MathProg.jl/blob/master/examples/sudoku.jl](https://github.com/IainNZ/MathProg.jl/blob/master/examples/sudoku.jl), which highlights Julia's tools for advanced optimization.
