@@ -1,5 +1,5 @@
-load("rules.jl")
-load("simulated_annealing.jl")
+include("rules.jl")
+include("simulated_annealing.jl")
 
 # Randomly flip two entries.
 # Need to respect hardcoded locations.

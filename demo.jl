@@ -1,6 +1,9 @@
-load("solver.jl")
-load("sample_games.jl")
-load("viz.jl")
+include("solver.jl")
+include("sample_games.jl")
+include("viz.jl")
+
+import StatsBase: randi
+
 
 println("Starting Grid")
 grid_print(grid)

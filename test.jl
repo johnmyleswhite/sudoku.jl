@@ -1,6 +1,6 @@
-load("rules.jl")
-load("solver.jl")
-load("sample_games.jl")
+include("rules.jl")
+include("solver.jl")
+include("sample_games.jl")
 
 @assert grid_quality(solution) == 27
 @assert is_solution(solution)
