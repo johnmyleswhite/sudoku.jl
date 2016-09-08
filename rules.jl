@@ -7,11 +7,11 @@
 # * Each of the 9 subgrids
 
 function check_row(row)
-  all(sort(reshape(row, 9)) .== [1:9])
+  all(sort(reshape(row, 9)) .== collect(1:9))
 end
 
 function check_column(column)
-  all(sort(reshape(column, 9)) .== [1:9])
+  all(sort(reshape(column, 9)) .== collect(1:9))
 end
 
 function check_rows(grid)
@@ -31,7 +31,7 @@ function check_columns(grid)
 end
 
 function generate_subgrids(grid)
-  {
+  (
     grid[1:3, 1:3],
     grid[1:3, 4:6],
     grid[1:3, 7:9],
@@ -41,11 +41,11 @@ function generate_subgrids(grid)
     grid[7:9, 1:3],
     grid[7:9, 4:6],
     grid[7:9, 7:9]
-  }
+   )
 end
 
 function check_subgrid(subgrid)
-  all(sort(reshape(subgrid, 9)) .== [1:9])
+  all(sort(reshape(subgrid, 9)) .== collect(1:9))
 end
 
 function check_subgrids(grid)
@@ -81,8 +81,8 @@ function fill_in(old_grid)
     row = grid[i, :]
     missing_entries = find(row .== 0)
     for n = 1:9
-      if !contains(row, n)
-        grid[i, pop(missing_entries)] = n
+        if !(n in row)
+        grid[i, pop!(missing_entries)] = n
       end
     end
   end
